@@ -30,7 +30,7 @@ export function useVerifySMS() {
       localStorage.setItem("refreshToken", data.refreshToken);
       localStorage.setItem("user", JSON.stringify(data.user));
 
-      navigate("/dashboard");
+      navigate("/");
     },
     onError: (error) => {
       console.error("로그인 실패:", error);
