@@ -27,7 +27,10 @@ export const verifySMS = async ({
   return data;
 };
 
-export const logout = (): void => {
-  localStorage.removeItem("token");
-  window.location.href = "/login";
+// 로그아웃 API 호출
+export const logoutApi = async (refreshToken: string) => {
+  const { data } = await apiClient.post("/auth/logout", {
+    refreshToken,
+  });
+  return data;
 };
